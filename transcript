@@ -145,3 +145,146 @@ add wave -position end  sim:/mult32x32_test/product
 add wave -position end  sim:/mult32x32_test/mult32x32_testbench/FSM/current
 add wave -position end  sim:/mult32x32_test/mult32x32_testbench/FSM/next
 run 500 ps
+restart
+run 500 ps
+vlog *.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:46:55 on Jan 15,2022
+# vlog -reportprogress 300 mult32x32.sv mult32x32_arith.sv mult32x32_fast.sv mult32x32_fast_arith.sv mult32x32_fast_fsm.sv mult32x32_fast_test.sv mult32x32_fsm.sv mult32x32_test.sv 
+# -- Compiling module mult32x32
+# -- Compiling module mult32x32_arith
+# -- Compiling module mult32x32_fast
+# -- Compiling module mult32x32_fast_arith
+# -- Compiling module mult32x32_fast_fsm
+# -- Compiling module mult32x32_fast_test
+# -- Compiling module mult32x32_fsm
+# -- Compiling module mult32x32_test
+# 
+# Top level modules:
+# 	mult32x32_fast_test
+# 	mult32x32_test
+# End time: 19:46:55 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# Loading work.mult32x32_test
+# Loading work.mult32x32
+# Loading work.mult32x32_fsm
+# Loading work.mult32x32_arith
+run 500 ps
+restart
+vsim mult32x32_fast_test
+# End time: 19:49:39 on Jan 15,2022, Elapsed time: 0:24:57
+# Errors: 0, Warnings: 1
+# vsim mult32x32_fast_test 
+# Start time: 19:49:39 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.mult32x32_fast_test
+# Loading work.mult32x32_fast
+# Loading work.mult32x32_fast_fsm
+# Loading work.mult32x32_fast_arith
+# ** Error: (vsim-3063) Port 'a_msw_is_0' not found in the connected module (10th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /mult32x32_fast_test/mult32x32_fast_testbench/FSM File: mult32x32_fast.sv Line: 20
+# ** Error: (vsim-3063) Port 'b_msw_is_0' not found in the connected module (11th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /mult32x32_fast_test/mult32x32_fast_testbench/FSM File: mult32x32_fast.sv Line: 20
+# Error loading design
+# End time: 19:49:40 on Jan 15,2022, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 1
+vsim mult32x32_fast_test
+# vsim mult32x32_fast_test 
+# Start time: 19:49:56 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.mult32x32_fast_test
+# Loading work.mult32x32_fast
+# Loading work.mult32x32_fast_fsm
+# Loading work.mult32x32_fast_arith
+# ** Error: (vsim-3063) Port 'a_msw_is_0' not found in the connected module (10th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /mult32x32_fast_test/mult32x32_fast_testbench/FSM File: mult32x32_fast.sv Line: 20
+# ** Error: (vsim-3063) Port 'b_msw_is_0' not found in the connected module (11th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /mult32x32_fast_test/mult32x32_fast_testbench/FSM File: mult32x32_fast.sv Line: 20
+# Error loading design
+# End time: 19:49:56 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+vsim mult32x32_fast_test
+# vsim mult32x32_fast_test 
+# Start time: 19:50:16 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.mult32x32_fast_test
+# Loading work.mult32x32_fast
+# Loading work.mult32x32_fast_fsm
+# Loading work.mult32x32_fast_arith
+# ** Error: (vsim-3063) Port 'a_msw_is_0' not found in the connected module (10th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /mult32x32_fast_test/mult32x32_fast_testbench/FSM File: mult32x32_fast.sv Line: 20
+# ** Error: (vsim-3063) Port 'b_msw_is_0' not found in the connected module (11th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /mult32x32_fast_test/mult32x32_fast_testbench/FSM File: mult32x32_fast.sv Line: 20
+# Error loading design
+# End time: 19:50:16 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+vlog *.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:50:22 on Jan 15,2022
+# vlog -reportprogress 300 mult32x32.sv mult32x32_arith.sv mult32x32_fast.sv mult32x32_fast_arith.sv mult32x32_fast_fsm.sv mult32x32_fast_test.sv mult32x32_fsm.sv mult32x32_test.sv 
+# -- Compiling module mult32x32
+# -- Compiling module mult32x32_arith
+# -- Compiling module mult32x32_fast
+# -- Compiling module mult32x32_fast_arith
+# -- Compiling module mult32x32_fast_fsm
+# -- Compiling module mult32x32_fast_test
+# -- Compiling module mult32x32_fsm
+# -- Compiling module mult32x32_test
+# 
+# Top level modules:
+# 	mult32x32_fast_test
+# 	mult32x32_test
+# End time: 19:50:22 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim mult32x32_fast_test
+# vsim mult32x32_fast_test 
+# Start time: 19:50:49 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.mult32x32_fast_test
+# Loading work.mult32x32_fast
+# Loading work.mult32x32_fast_fsm
+# Loading work.mult32x32_fast_arith
+# ** Error: (vsim-3063) Port 'a_msw_is_0' not found in the connected module (10th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /mult32x32_fast_test/mult32x32_fast_testbench/FSM File: mult32x32_fast.sv Line: 20
+# ** Error: (vsim-3063) Port 'b_msw_is_0' not found in the connected module (11th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /mult32x32_fast_test/mult32x32_fast_testbench/FSM File: mult32x32_fast.sv Line: 20
+# Error loading design
+# End time: 19:50:49 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+vlog *.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:52:19 on Jan 15,2022
+# vlog -reportprogress 300 mult32x32.sv mult32x32_arith.sv mult32x32_fast.sv mult32x32_fast_arith.sv mult32x32_fast_fsm.sv mult32x32_fast_test.sv mult32x32_fsm.sv mult32x32_test.sv 
+# -- Compiling module mult32x32
+# -- Compiling module mult32x32_arith
+# -- Compiling module mult32x32_fast
+# -- Compiling module mult32x32_fast_arith
+# -- Compiling module mult32x32_fast_fsm
+# -- Compiling module mult32x32_fast_test
+# -- Compiling module mult32x32_fsm
+# -- Compiling module mult32x32_test
+# 
+# Top level modules:
+# 	mult32x32_fast_test
+# 	mult32x32_test
+# End time: 19:52:19 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim mult32x32_fast_test
+# vsim mult32x32_fast_test 
+# Start time: 19:52:22 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.mult32x32_fast_test
+# Loading work.mult32x32_fast
+# Loading work.mult32x32_fast_fsm
+# Loading work.mult32x32_fast_arith
+add wave -position end  sim:/mult32x32_fast_test/clk
+add wave -position end  sim:/mult32x32_fast_test/reset
+add wave -position end  sim:/mult32x32_fast_test/start
+add wave -position end  sim:/mult32x32_fast_test/a
+add wave -position end  sim:/mult32x32_fast_test/b
+add wave -position end  sim:/mult32x32_fast_test/busy
+add wave -position end  sim:/mult32x32_fast_test/product
+add wave -position end  sim:/mult32x32_fast_test/mult32x32_fast_testbench/FSM/current
+add wave -position end  sim:/mult32x32_fast_test/mult32x32_fast_testbench/FSM/next
+run 500 ps

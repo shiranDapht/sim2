@@ -13,14 +13,14 @@ module mult32x32_fast_fsm (
     output logic clr_prod         // Clear the product register
 );
 
-	typedef enum { s_0, s_1, s_2, s_3, s_4 } s_type;
+	typedef enum { idle, s_1, s_2, s_3, s_4 } s_type;
 	
 	s_type current;
     s_type next;
 
 	always_ff @(posedge clk, posedge reset) begin
         if (reset == 1'b1) begin
-            current <= s_0;
+            current <= idle;
         end
         else begin
             current <= next;
@@ -36,7 +36,7 @@ module mult32x32_fast_fsm (
 	b_sel = 1'b0;
 	next = current;
     case (current)
-        s_0: begin
+        idle: begin
             if (start == 1) begin
 				clr_prod = 1'b1;
                 next = s_1;
@@ -46,7 +46,7 @@ module mult32x32_fast_fsm (
 			if(a_msw_is_0 == 1 && b_msw_is_0 == 1)begin
 				upd_prod = 1'b1;
 				busy = 1'b1;
-				next = s_0;
+				next = idle;
             end
 			else if(a_msw_is_0 == 1 && b_msw_is_0 == 0)begin
 				upd_prod = 1'b1;
@@ -66,7 +66,7 @@ module mult32x32_fast_fsm (
 				shift_sel = 2'b01;
 				a_sel = 1'b1;
 				b_sel = 1'b0;
-				next = s_0;
+				next = idle;
             end
 			else begin
 				upd_prod = 1'b1;	
@@ -84,7 +84,7 @@ module mult32x32_fast_fsm (
 				shift_sel = 2'b01;
 				a_sel = 1'b0;
 				b_sel = 1'b1;
-				next = s_0;
+				next = idle;
             end
 			else begin
 				upd_prod = 1'b1;
@@ -101,7 +101,7 @@ module mult32x32_fast_fsm (
 			shift_sel = 2'b10;	
 			a_sel = 1'b1;
 			b_sel = 1'b1;
-            next = s_0;
+            next = idle;
         end
     endcase
 end

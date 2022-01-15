@@ -9,7 +9,7 @@ module mult32x32_fast_test;
     logic busy;           // Multiplier busy indication
     logic [63:0] product; // Miltiplication product
 
-	mult32x32_fast  mult32x32_fast_testbench(.clk(clk), .reset(reset), .start(start), .a(a), .b(b), .busy(busy), .product(product));
+	mult32x32_fast  mult32x32_fast_test_bench(.clk(clk), .reset(reset), .start(start), .a(a), .b(b), .busy(busy), .product(product));
 	always begin
 		#5 clk =~clk;
 	end

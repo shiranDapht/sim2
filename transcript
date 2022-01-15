@@ -42,3 +42,106 @@ add wave -position end  sim:/mult32x32_test/product
 add wave -position end  sim:/mult32x32_test/mult32x32_uut/FSM/current
 add wave -position end  sim:/mult32x32_test/mult32x32_uut/FSM/next
 run 300 ns
+vlog *.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:08:26 on Jan 15,2022
+# vlog -reportprogress 300 mult32x32.sv mult32x32_arith.sv mult32x32_fast.sv mult32x32_fast_arith.sv mult32x32_fast_fsm.sv mult32x32_fast_test.sv mult32x32_fsm.sv mult32x32_test.sv 
+# -- Compiling module mult32x32
+# -- Compiling module mult32x32_arith
+# -- Compiling module mult32x32_fast
+# -- Compiling module mult32x32_fast_arith
+# -- Compiling module mult32x32_fast_fsm
+# -- Compiling module mult32x32_fast_test
+# -- Compiling module mult32x32_fsm
+# -- Compiling module mult32x32_test
+# ** Error: (vlog-13069) mult32x32_test.sv(12): near "bench": syntax error, unexpected IDENTIFIER, expecting ';'.
+# End time: 19:08:26 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+vlog *.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:09:38 on Jan 15,2022
+# vlog -reportprogress 300 mult32x32.sv mult32x32_arith.sv mult32x32_fast.sv mult32x32_fast_arith.sv mult32x32_fast_fsm.sv mult32x32_fast_test.sv mult32x32_fsm.sv mult32x32_test.sv 
+# -- Compiling module mult32x32
+# -- Compiling module mult32x32_arith
+# -- Compiling module mult32x32_fast
+# -- Compiling module mult32x32_fast_arith
+# -- Compiling module mult32x32_fast_fsm
+# -- Compiling module mult32x32_fast_test
+# -- Compiling module mult32x32_fsm
+# -- Compiling module mult32x32_test
+# ** Error: (vlog-13069) mult32x32_test.sv(12): near "bench": syntax error, unexpected IDENTIFIER, expecting ';'.
+# End time: 19:09:38 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+vlog *.sv
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:09:47 on Jan 15,2022
+# vlog -reportprogress 300 mult32x32.sv mult32x32_arith.sv mult32x32_fast.sv mult32x32_fast_arith.sv mult32x32_fast_fsm.sv mult32x32_fast_test.sv mult32x32_fsm.sv mult32x32_test.sv 
+# -- Compiling module mult32x32
+# -- Compiling module mult32x32_arith
+# -- Compiling module mult32x32_fast
+# -- Compiling module mult32x32_fast_arith
+# -- Compiling module mult32x32_fast_fsm
+# -- Compiling module mult32x32_fast_test
+# -- Compiling module mult32x32_fsm
+# -- Compiling module mult32x32_test
+# 
+# Top level modules:
+# 	mult32x32_fast_test
+# 	mult32x32_test
+# End time: 19:09:47 on Jan 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim mult32x32_fast_test
+# End time: 19:10:04 on Jan 15,2022, Elapsed time: 3:47:07
+# Errors: 0, Warnings: 4
+# vsim mult32x32_fast_test 
+# Start time: 19:10:05 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.mult32x32_fast_test
+# Loading work.mult32x32_fast
+# Loading work.mult32x32_fast_fsm
+# Loading work.mult32x32_fast_arith
+add wave -position end  sim:/mult32x32_fast_test/clk
+add wave -position end  sim:/mult32x32_fast_test/reset
+add wave -position end  sim:/mult32x32_fast_test/start
+add wave -position end  sim:/mult32x32_fast_test/a
+add wave -position end  sim:/mult32x32_fast_test/b
+add wave -position end  sim:/mult32x32_fast_test/busy
+add wave -position end  sim:/mult32x32_fast_test/product
+add wave -position end  sim:/mult32x32_fast_test/mult32x32_fast_testbench/FSM/current
+add wave -position end  sim:/mult32x32_fast_test/mult32x32_fast_testbench/FSM/next
+run 500 ps
+restart
+vsim mult32x32_test
+# End time: 19:24:21 on Jan 15,2022, Elapsed time: 0:14:16
+# Errors: 0, Warnings: 1
+# vsim mult32x32_test 
+# Start time: 19:24:22 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.mult32x32_test
+# Loading work.mult32x32
+# Loading work.mult32x32_fsm
+# Loading work.mult32x32_arith
+run 500 ps
+restart
+vsim mult32x32_test
+# End time: 19:24:42 on Jan 15,2022, Elapsed time: 0:00:20
+# Errors: 0, Warnings: 1
+# vsim mult32x32_test 
+# Start time: 19:24:42 on Jan 15,2022
+# Loading sv_std.std
+# Loading work.mult32x32_test
+# Loading work.mult32x32
+# Loading work.mult32x32_fsm
+# Loading work.mult32x32_arith
+add wave -position end  sim:/mult32x32_test/clk
+add wave -position end  sim:/mult32x32_test/reset
+add wave -position end  sim:/mult32x32_test/start
+add wave -position end  sim:/mult32x32_test/a
+add wave -position end  sim:/mult32x32_test/b
+add wave -position end  sim:/mult32x32_test/busy
+add wave -position end  sim:/mult32x32_test/product
+add wave -position end  sim:/mult32x32_test/mult32x32_testbench/FSM/current
+add wave -position end  sim:/mult32x32_test/mult32x32_testbench/FSM/next
+run 500 ps

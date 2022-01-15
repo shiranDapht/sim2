@@ -9,10 +9,17 @@ module mult32x32_fast (
     output logic [63:0] product // Miltiplication product
 );
 
-// Put your code here
-// ------------------
+    logic upd_prod;
+    logic clr_prod;
+    logic [1:0] shift_sel;
+	logic a_sel;
+    logic b_sel;
+	logic a_msw_is_0;
+	logic b_msw_is_0;
+	
+	mult32x32_fast_fsm FSM (.clk(clk), .reset(reset), .start(start),.busy(busy),.a_sel(a_sel),.b_sel(b_sel),.shift_sel(shift_sel),.upd_prod(upd_prod),.clr_prod(clr_prod),.a_msw_is_0(a_msw_is_0),.b_msw_is_0(b_msw_is_0));
+    mult32x32_fast_arith ARITH (.clk(clk), .reset(reset),.a(a),.b(b), .a_sel(a_sel),.b_sel(b_sel),.shift_sel(shift_sel),.upd_prod(upd_prod),.clr_prod(clr_prod),.product(product),.a_msw_is_0(a_msw_is_0),.b_msw_is_0(b_msw_is_0));
 
 
-// End of your code
 
 endmodule

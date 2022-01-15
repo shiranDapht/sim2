@@ -12,25 +12,25 @@ module mult32x32_arith (
     output logic [63:0] product  // Miltiplication product
 );
 
+	logic[63:0] product_adder_1;
+	logic[63:0] product_adder_2;
+	logic[63:0] shift_adder;
 	logic[15:0] a_mult;
 	logic[15:0] b_mult;
-	logic[31:0] mult_2_shift;
-	logic[63:0] shift_adder;
-	logic[63:0] adder_2_prod;
-	logic[63:0] product_adder;
+	logic[31:0] shift_mult;
 	
 	always_ff @(posedge clk, posedge reset) begin
         if (reset == 1'b1 || clr_prod == 1'b1) begin
             product <= 64'b0;
         end
         else if (upd_prod == 1'b1 ) begin
-        	product <= adder_2_prod;    
+        	product <= product_adder_2;    
         end
     end
 	
 	always_comb begin
 		
-		product_adder = product;
+		product_adder_1 = product;
 
 		if (a_sel == 0) begin 
 			assign  a_mult = a[15:0];
@@ -46,21 +46,21 @@ module mult32x32_arith (
 			assign  b_mult = b[31:16];
 		end
 
-	    assign mult_2_shift = a_mult * b_mult;
+	    assign shift_mult = a_mult * b_mult;
 		case (shift_sel) 
 	    2'b00 : begin
-					assign  shift_adder = mult_2_shift << 0;
+					assign  shift_adder = shift_mult << 0; 
 				end
 	    2'b01 : begin
-					assign  shift_adder = mult_2_shift << 16;
+					assign  shift_adder = shift_mult << 16;
 				end
 	    2'b10 : begin
-					assign  shift_adder = mult_2_shift << 32;
+					assign  shift_adder = shift_mult << 32;
 				end
 	 
 	    endcase
 		
-		assign  adder_2_prod=  shift_adder + product_adder ; 
+		assign  product_adder_2 =  shift_adder + product_adder_1 ; 
 
 	end
 

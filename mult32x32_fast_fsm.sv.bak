@@ -37,9 +37,9 @@ module mult32x32_fast_fsm (
 	next = current;
     case (current)
         s_0: begin
-            if (start == 1) begin
-				clr_prod = 1'b1;
+            if (start==1) begin
                 next = s_1;
+				clr_prod = 1'b1;
             end
         end
         s_1: begin
@@ -61,47 +61,47 @@ module mult32x32_fast_fsm (
         end
 		s_2: begin
 			if(a_msw_is_0== 0 && b_msw_is_0== 1)begin
-				upd_prod = 1'b1;
-				busy = 1'b1;
-				shift_sel = 2'b01;
-				a_sel = 1'b1;
-				b_sel = 1'b0;
 				next = s_0;
+				busy=1'b1;
+				a_sel=1'b1;
+				b_sel=1'b0;
+				shift_sel=2'b01;
+				upd_prod=1'b1;
             end
 			else begin
-				upd_prod = 1'b1;	
-				busy = 1'b1;
-				shift_sel = 2'b01;
-				a_sel = 1'b1;
-				b_sel = 1'b0;
 				next = s_3;
+				busy=1'b1;
+				a_sel=1'b1;
+				b_sel=1'b0;
+				shift_sel=2'b01;
+				upd_prod=1'b1;	
 			end
         end
 		s_3: begin
-			if(a_msw_is_0 == 1 && b_msw_is_0 == 0)begin
-				upd_prod = 1'b1;
-				busy = 1'b1;
-				shift_sel = 2'b01;
-				a_sel = 1'b0;
-				b_sel = 1'b1;
+			if(a_msw_is_0== 1 && b_msw_is_0== 0)begin
 				next = s_0;
+				busy=1'b1;
+				a_sel=1'b0;
+				b_sel=1'b1;
+				shift_sel=2'b01;
+				upd_prod=1'b1;	
             end
 			else begin
-				upd_prod = 1'b1;
-				busy = 1'b1;
-				shift_sel = 2'b01;
-				a_sel = 1'b0;
-				b_sel = 1'b1;
 				next = s_4;
+				busy=1'b1;
+				a_sel=1'b0;
+				b_sel=1'b1;
+				shift_sel=2'b01;
+				upd_prod=1'b1;	
 			end
         end
 		s_4: begin
-			upd_prod = 1'b1;
-			busy = 1'b1;
-			shift_sel = 2'b10;	
-			a_sel = 1'b1;
-			b_sel = 1'b1;
             next = s_0;
+			busy=1'b1;
+			a_sel=1'b1;
+			b_sel=1'b1;
+			shift_sel=2'b10;
+			upd_prod=1'b1;	
         end
     endcase
 end

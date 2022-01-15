@@ -9,8 +9,7 @@ module mult32x32_test;
     logic busy;           // Multiplier busy indication
     logic [63:0] product; // Miltiplication product
 
-	mult32x32  mult32x32_uut(.clk(clk), .reset(reset), .start(start), .a(a), .b(b), .busy(busy), .product(product));
-
+	mult32x32  mult32x32_testbench(.clk(clk), .reset(reset), .start(start), .a(a), .b(b), .busy(busy), .product(product));
 	always begin
 		#5 clk =~clk;
 	end
@@ -31,7 +30,5 @@ module mult32x32_test;
 		@(posedge clk);
 		start = 1'b0;
 		@(negedge busy); 
-
 	end
-
 endmodule

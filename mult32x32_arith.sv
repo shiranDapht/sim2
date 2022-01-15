@@ -60,7 +60,7 @@ module mult32x32_arith (
 	 
 	    endcase
 		
-		assign  product_adder_2 =  shift_adder + product_adder_1 ; 
+		assign  product_adder_2 =  shift_adder + product_adder_1; 
 
 	end
 

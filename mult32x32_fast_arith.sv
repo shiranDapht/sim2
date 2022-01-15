@@ -14,10 +14,67 @@ module mult32x32_fast_arith (
     output logic [63:0] product  // Miltiplication product
 );
 
-// Put your code here
-// ------------------
+	logic[63:0] product_adder_1;
+	logic[63:0] product_adder_2;
+	logic[63:0] shift_adder;
+	logic[15:0] a_mult;
+	logic[15:0] b_mult;
+	logic[31:0] shift_mult;
+	logic[63:0] temp;
+	
+	always_ff @(posedge clk, posedge reset) begin
+        if (reset == 1'b1 || clr_prod == 1'b1) begin
+            product <= 64'b0;
+        end
+        else if (upd_prod == 1'b1 ) begin
+        	product <= product_adder_2;    
+        end
+    end
+	
+	always_comb begin
 
+		a_msw_is_0 = 1;
+		b_msw_is_0 = 1;
+		temp = (a >> 16);
+		if (temp > 0) begin
+			a_msw_is_0 = 0;
+		end
+		temp = (b >> 16);
+		if (temp > 0) begin
+			b_msw_is_0 = 0;
+		end
+		product_adder_1 = product;
 
-// End of your code
+		if (a_sel == 0) begin 
+			assign  a_mult = a[15:0];
+		end
+		else begin
+			assign  a_mult = a[31:16];
+		end
+		
+		if (b_sel == 0) begin 
+			assign  b_mult = b[15:0];
+		end
+		else begin
+			assign  b_mult = b[31:16];
+		end
+
+	    assign shift_mult = a_mult * b_mult;
+		case (shift_sel) 
+	    2'b00 : begin
+					assign  shift_adder = shift_mult << 0; 
+				end
+	    2'b01 : begin
+					assign  shift_adder = shift_mult << 16;
+				end
+	    2'b10 : begin
+					assign  shift_adder = shift_mult << 32;
+				end
+	 
+	    endcase
+		
+		assign  product_adder_2 =  shift_adder + product_adder_1; 
+
+	end
 
 endmodule

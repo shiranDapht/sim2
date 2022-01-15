@@ -10,11 +10,11 @@ module mult32x32 (
 );
     logic upd_prod;
     logic clr_prod;
-    logic [1:0] sel_shift;
-	logic sel_1;
-    logic sel_2;
+    logic [1:0] shift_sel;
+	logic a_sel;
+    logic b_sel;
 
-	mult32x32_arith ARITH (.clk(clk), .reset(reset),.a(a),.b(b), .sel_1(sel_1),.sel_2(sel_2),.sel_shift(sel_shift),.upd_prod(upd_prod),.clr_prod(clr_prod),.product(product));
-	mult32x32_fsm FSM (.clk(clk), .reset(reset), .start(start),.busy(busy),.sel_1(sel_1),.sel_2(sel_2),.sel_shift(sel_shift),.upd_prod(upd_prod),.clr_prod(clr_prod));
+	mult32x32_fsm FSM (.clk(clk), .reset(reset), .start(start),.busy(busy),.a_sel(a_sel),.b_sel(b_sel),.shift_sel(shift_sel),.upd_prod(upd_prod),.clr_prod(clr_prod));
+	mult32x32_arith ARITH (.clk(clk), .reset(reset),.a(a),.b(b), .a_sel(a_sel),.b_sel(b_sel),.shift_sel(shift_sel),.upd_prod(upd_prod),.clr_prod(clr_prod),.product(product));
 	
 endmodule

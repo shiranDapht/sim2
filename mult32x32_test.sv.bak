@@ -25,11 +25,11 @@ module mult32x32_test;
 		end
 		reset = 1'b0;
 		@(posedge clk);
-		start = 1'b1;
+		start= 1'b1;
 		a = 316007988;
 		b = 208397414;
 		@(posedge clk);
-		start = 1'b0;
+		start=1'b0;
 		@(negedge busy); 
 
 	end
